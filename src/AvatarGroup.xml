@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<widget id="mendix.avatargroup.AvatarGroup" pluginWidget="true" needsEntityContext="true"
+    offlineCapable="true"
+    supportedPlatform="Web"
+    xmlns="http://www.mendix.com/widget/1.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.mendix.com/widget/1.0/ ../node_modules/mendix/custom_widget.xsd">
+    <name>Avatar Group</name>
+    <description>Render an avatar group with datasource</description>
+    <icon />
+    <properties>
+        <propertyGroup caption="General">
+            <propertyGroup caption="Data configuration">
+                <property key="datasource" type="datasource" required="false" isList="true">
+                    <caption>Datasource</caption>
+                    <description>Source of your avatar data</description>
+                </property>
+
+                <property key="UserName" type="attribute" required="true" dataSource="datasource">
+                    <caption>Name</caption>
+                    <description>Name to display can be email or just fullname</description>
+                    <attributeTypes>
+                        <attributeType name="String" />
+                    </attributeTypes>
+                </property>
+
+                <property key="imgSrc" type="textTemplate" required="false" dataSource="datasource">
+                    <caption>Image URL</caption>
+                    <description>External image URL. Leave this empty if you want to display user's initials</description>
+                </property>
+
+                <property key="maxToShow" type="integer" defaultValue="3" required="true">
+                    <caption>Amount to show</caption>
+                    <description></description>
+                </property>
+            </propertyGroup>
+
+
+        </propertyGroup>
+    </properties>
+</widget>
