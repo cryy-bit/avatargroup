@@ -1,5 +1,7 @@
 import { createElement, ReactElement } from "react";
-import { Popover, Typography, Avatar } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
 import { data } from "typings/AvatarDataProps";
 
 interface PopOverProps {
@@ -8,7 +10,7 @@ interface PopOverProps {
     setListVisible: (visible: boolean) => void;
     data: data[];
     maxToShow: number;
-    stringAvatar: (name: string, object: { width: number; height: number }) => object; 
+    stringAvatar: (name: string, object: { width: number; height: number }) => object;
 }
 
 const PopOver = ({
@@ -36,10 +38,7 @@ const PopOver = ({
                         {user.src ? (
                             <Avatar sx={{ width: 24, height: 24 }} alt={`${user.name}`} src={`${user.src}`} />
                         ) : (
-                            <Avatar
-                                alt={`${user.name}`}
-                                {...stringAvatar(user.name!, { width: 24, height: 24 })}
-                            />
+                            <Avatar alt={`${user.name}`} {...stringAvatar(user.name!, { width: 24, height: 24 })} />
                         )}
 
                         <div className="name-container">{user.name}</div>

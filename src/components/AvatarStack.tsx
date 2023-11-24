@@ -1,6 +1,8 @@
-import React, { createElement, useState, useEffect } from "react";
+import { createElement, useState, useEffect, Fragment } from "react";
 import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
-import { Avatar, AvatarGroup, Tooltip, TooltipProps, tooltipClasses } from "@mui/material";
+import Avatar from "@mui/material/Avatar";
+import AvatarGroup from '@mui/material/AvatarGroup'
+import Tooltip, { TooltipProps, tooltipClasses} from '@mui/material/Tooltip'
 import { styled } from "@mui/material/styles";
 import stringAvatar from "src/utils/stringAvatar";
 import { data } from "typings/AvatarDataProps";
@@ -40,7 +42,7 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
     };
 
     return (
-        <React.Fragment>
+        <Fragment>
             <AvatarGroup max={maxToShow + 1}>
                 {avatars?.slice(0, maxToShow).map(user => {
                     return (
@@ -70,7 +72,7 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
                     stringAvatar={stringAvatar}
                 />
             )}
-        </React.Fragment>
+        </Fragment>
     );
 };
 
