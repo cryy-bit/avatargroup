@@ -8,7 +8,7 @@ interface PopOverProps {
     setListVisible: (visible: boolean) => void;
     data: data[];
     maxToShow: number;
-    stringAvatar: (name: string, object: { width: number; height: number }) => any; // Adjust the type as necessary
+    stringAvatar: (name: string, object: { width: number; height: number }) => object; 
 }
 
 const PopOver = ({
