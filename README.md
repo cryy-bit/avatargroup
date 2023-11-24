@@ -1,4 +1,5 @@
 ## AvatarGroup
+### Delete this line
 
 A Material UI avatar grouo widget for Mendix. 
 
