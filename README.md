@@ -1,13 +1,13 @@
 ## AvatarGroup
 
-A Material UI avatar grouo widget for Mendix. 
+A Material UI avatar group widget for Mendix. 
 
 <img width="396" alt="Screenshot 2023-11-24 at 14 23 14" src="https://github.com/cryy-bit/avatargroup/assets/77331038/9cb1277e-f1ae-4e7f-8d4e-f0121b23e250">
 
 ## Features
 The widget renders a Material-UI avatar stacked group, utilizing a Mendix datasource. Users can pass in attributes linked to the datasource, such as Name, Email, and users' images. Additionally, users can select how many avatars to display initially and the number to show as 'additional' users. Clicking on the 'additional' user avatars will display a popover to show the rest of the list.
 
-![image](https://github.com/cryy-bit/avatargroup/assets/77331038/27c1d7e7-5e91-43b6-94c3-3e300ea73953)
+![image](https://github.com/cryy-bit/avatargroup/assets/77331038/c7655e07-7285-45ac-85ee-27a83f8376fa)
 
 
 ## Issues, suggestions and feature requests
