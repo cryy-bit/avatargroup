@@ -1,4 +1,4 @@
-import { createElement, useState, useEffect, Fragment } from "react";
+import React, { createElement, useState, useEffect, Fragment, ReactElement } from "react";
 import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
@@ -8,7 +8,7 @@ import stringAvatar from "src/utils/stringAvatar";
 import { data } from "typings/AvatarDataProps";
 import PopOver from "./PopOver";
 
-const AvatarStack = (props: AvatarGroupContainerProps) => {
+const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
     const { datasource, imgSrc, UserName, maxToShow, showPopOver } = props;
     const [isListVisible, setListVisible] = useState<boolean>(false);
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
@@ -33,9 +33,9 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
 
             setAvatars(data);
         }
-    }, [datasource?.status]);
+    }, [datasource?.status, UserName, datasource?.items, imgSrc]);
 
-    const handleLastAvatarClicked = (event: React.MouseEvent<HTMLDivElement>) => {
+    const handleLastAvatarClicked = (event: React.MouseEvent<HTMLDivElement>): void => {
         setListVisible(prev => !prev);
         setAnchorEl(event.currentTarget);
     };

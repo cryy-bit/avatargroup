@@ -1,6 +1,6 @@
 import GenerateColor from "./GenerateColor";
 
-const stringAvatar = (name: string, extraStyling?: object) => {
+const stringAvatar = (name: string, extraStyling?: object): object => {
     return {
         sx: {
             bgcolor: GenerateColor(name),
