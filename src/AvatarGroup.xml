@@ -34,7 +34,7 @@
                 </property>
 
                 <property key="showPopOver" type="boolean" required="true" defaultValue="true">
-                    <caption>show more enabled</caption>
+                    <caption>Show Popover</caption>
                     <description>This is used to enable/disable show more users in the pop-over</description>
                 </property>
             </propertyGroup>
