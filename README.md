@@ -1,6 +1,6 @@
 ## AvatarGroup
 
-A Material UI avatar group widget for Mendix. 
+A Material UI avatar group widget for Mendix.  test
 
 <img width="396" alt="Screenshot 2023-11-24 at 14 23 14" src="https://github.com/cryy-bit/avatargroup/assets/77331038/9cb1277e-f1ae-4e7f-8d4e-f0121b23e250">
 
