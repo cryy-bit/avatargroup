@@ -1,11 +1,8 @@
 import { ReactElement, createElement } from "react";
-import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
-import AvatarStack from "./components/AvatarStack";
+import AvatarStackPreview from "./components/AvatarStackPreview";
 
-export function preview({ class: className }: AvatarGroupContainerProps): ReactElement {
-    return (
-        <AvatarStack class={className} name={""} maxToShow={3} ></AvatarStack>
-    );
+export function preview(): ReactElement {
+    return <AvatarStackPreview />;
 }
 
 export function getPreviewCss(): string {

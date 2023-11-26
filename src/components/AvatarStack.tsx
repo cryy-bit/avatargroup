@@ -1,15 +1,15 @@
 import { createElement, useState, useEffect, Fragment } from "react";
 import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
 import Avatar from "@mui/material/Avatar";
-import AvatarGroup from '@mui/material/AvatarGroup'
-import Tooltip, { TooltipProps, tooltipClasses} from '@mui/material/Tooltip'
+import AvatarGroup from "@mui/material/AvatarGroup";
+import Tooltip, { TooltipProps, tooltipClasses } from "@mui/material/Tooltip";
 import { styled } from "@mui/material/styles";
 import stringAvatar from "src/utils/stringAvatar";
 import { data } from "typings/AvatarDataProps";
 import PopOver from "./PopOver";
 
 const AvatarStack = (props: AvatarGroupContainerProps) => {
-    const { datasource, imgSrc, UserName, maxToShow } = props;
+    const { datasource, imgSrc, UserName, maxToShow, showPopOver } = props;
     const [isListVisible, setListVisible] = useState<boolean>(false);
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
     const [avatars, setAvatars] = useState<data[]>([]);
@@ -23,18 +23,17 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
         }
     });
 
-    useEffect(()=>{
-        if (datasource?.status === "available" && datasource.items){
+    useEffect(() => {
+        if (datasource?.status === "available" && datasource.items) {
             const data: data[] = datasource.items.map(item => ({
                 key: item.id,
                 name: UserName?.get(item).displayValue,
                 src: imgSrc ? imgSrc.get(item).value : undefined
-            }))
+            }));
 
             setAvatars(data);
         }
-        
-    }, [datasource?.status])
+    }, [datasource?.status]);
 
     const handleLastAvatarClicked = (event: React.MouseEvent<HTMLDivElement>) => {
         setListVisible(prev => !prev);
@@ -50,7 +49,7 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
                             {user.src ? (
                                 <Avatar className="avatar" alt={`${user.name}`} src={`${user.src}`} />
                             ) : (
-                                <Avatar {...stringAvatar(user.name!)} alt={`${user.name}`}/>
+                                <Avatar {...stringAvatar(user.name!)} alt={`${user.name}`} />
                             )}
                         </CustomWidthTooltip>
                     );
@@ -62,7 +61,7 @@ const AvatarStack = (props: AvatarGroupContainerProps) => {
                 )}
             </AvatarGroup>
 
-            {isListVisible && (
+            {isListVisible && showPopOver && (
                 <PopOver
                     isListVisible={isListVisible}
                     anchorEl={anchorEl}

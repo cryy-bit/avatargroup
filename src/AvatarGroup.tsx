@@ -6,5 +6,5 @@ import "./ui/AvatarGroup.css";
 import AvatarStack from "./components/AvatarStack";
 
 export function AvatarGroup(props: AvatarGroupContainerProps): ReactElement {
-    return <AvatarStack {...props}/>;
+    return <AvatarStack {...props} />;
 }

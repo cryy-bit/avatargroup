@@ -11,7 +11,6 @@ const stringAvatar = (name: string, extraStyling?: object) => {
                 ? `${name.split(" ")[0][0]}` + `${name.split(" ")[1][0]}`
                 : `${name.split(" ")[0][0]}`
     };
-}
+};
 
-
-export default stringAvatar; 
+export default stringAvatar;

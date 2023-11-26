@@ -15,6 +15,7 @@ export interface AvatarGroupContainerProps {
     UserName?: ListAttributeValue<string>;
     imgSrc?: ListExpressionValue<string>;
     maxToShow: number;
+    showPopOver: boolean;
 }
 
 export interface AvatarGroupPreviewProps {
@@ -30,4 +31,5 @@ export interface AvatarGroupPreviewProps {
     UserName: string;
     imgSrc: string;
     maxToShow: number | null;
+    showPopOver: boolean;
 }
