@@ -10,7 +10,11 @@ interface PopOverProps {
     setListVisible: (visible: boolean) => void;
     data: data[];
     maxToShow: number;
-    stringAvatar: (name: string, object: { width: number; height: number }) => object;
+    stringAvatar: (name: string, object?: { width: string; height: string }) => object;
+    heightUnit: string;
+    widthUnit: string;
+    avatarHeight: number;
+    avatarWidth: number;
 }
 
 const PopOver = ({
@@ -19,8 +23,17 @@ const PopOver = ({
     setListVisible,
     data,
     maxToShow,
-    stringAvatar
+    stringAvatar,
+    heightUnit,
+    widthUnit,
+    avatarHeight,
+    avatarWidth
 }: PopOverProps): ReactElement => {
+    const customAvatarSize = {
+        height: `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
+        width: `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
+    };
+
     return (
         <Popover
             id="avatar-last-elem"
@@ -36,9 +49,9 @@ const PopOver = ({
                 <Typography sx={{ p: 2 }} key={user.key}>
                     <div className="flex-container">
                         {user.src ? (
-                            <Avatar sx={{ width: 24, height: 24 }} alt={`${user.name}`} src={`${user.src}`} />
+                            <Avatar sx={customAvatarSize} alt={`${user.name}`} src={`${user.src}`} />
                         ) : (
-                            <Avatar alt={`${user.name}`} {...stringAvatar(user.name!, { width: 24, height: 24 })} />
+                            <Avatar alt={`${user.name}`} {...stringAvatar(user.name!, customAvatarSize)} />
                         )}
 
                         <div className="name-container">{user.name}</div>

@@ -1,4 +1,5 @@
 import { AvatarGroupPreviewProps } from "../typings/AvatarGroupProps";
+import { hidePropertiesIn } from "@mendix/pluggable-widgets-tools";
 
 export type Platform = "web" | "desktop";
 
@@ -109,6 +110,15 @@ export function getProperties(
         delete defaultProperties.properties.myOtherProperty;
     }
     */
+
+    if (!_values.showPopOver) {
+        hidePropertiesIn(defaultProperties, _values, [
+            "popOverAvatarHeightUnit",
+            "popOverAvatarHeight",
+            "popOverAvatarWidth",
+            "popOverAvatarWidthUnit"
+        ]);
+    }
 
     return defaultProperties;
 }
