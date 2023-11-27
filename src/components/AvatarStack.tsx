@@ -45,7 +45,7 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
             <AvatarGroup max={maxToShow + 1}>
                 {avatars?.slice(0, maxToShow).map(user => {
                     return (
-                        <CustomWidthTooltip sx={{ fontSize: "4rem" }} title={user.name} key={user.key} placement="top">
+                        <CustomWidthTooltip title={user.name} key={user.key} placement="top">
                             {user.src ? (
                                 <Avatar className="avatar" alt={`${user.name}`} src={`${user.src}`} />
                             ) : (
