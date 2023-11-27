@@ -30,8 +30,8 @@ const PopOver = ({
     avatarWidth
 }: PopOverProps): ReactElement => {
     const customAvatarSize = {
-        height: heightUnit === "Auto" ? "Auto" : `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
-        width: widthUnit === "Auto" ? "Auto" : `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
+        height: `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
+        width: `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
     };
 
     return (

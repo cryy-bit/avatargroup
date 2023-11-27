@@ -6,13 +6,13 @@
 import { CSSProperties } from "react";
 import { ListValue, ListAttributeValue, ListExpressionValue } from "mendix";
 
-export type WidthUnitEnum = "Auto" | "Pixels" | "Percentage";
+export type WidthUnitEnum = "Pixels" | "Percentage";
 
-export type HeightUnitEnum = "Auto" | "Pixels" | "Percentage";
+export type HeightUnitEnum = "Pixels" | "Percentage";
 
-export type PopOverAvatarHeightUnitEnum = "Auto" | "Pixels" | "Percentage";
+export type PopOverAvatarHeightUnitEnum = "Pixels" | "Percentage";
 
-export type PopOverAvatarWidthUnitEnum = "Auto" | "Pixels" | "Percentage";
+export type PopOverAvatarWidthUnitEnum = "Pixels" | "Percentage";
 
 export interface AvatarGroupContainerProps {
     name: string;

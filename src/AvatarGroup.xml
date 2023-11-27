@@ -39,7 +39,6 @@
                     <caption>Avatar Width unit</caption>
                     <description></description>
                     <enumerationValues>
-                        <enumerationValue key="Auto">Auto</enumerationValue>
                         <enumerationValue key="Pixels">Pixels</enumerationValue>
                         <enumerationValue key="Percentage">Percentage</enumerationValue>
                     </enumerationValues>
@@ -54,7 +53,6 @@
                     <caption>Avatar Height unit</caption>
                     <description></description>
                     <enumerationValues>
-                        <enumerationValue key="Auto">Auto</enumerationValue>
                         <enumerationValue key="Pixels">Pixels</enumerationValue>
                         <enumerationValue key="Percentage">Percentage</enumerationValue>
                     </enumerationValues>
@@ -74,7 +72,6 @@
                     <caption>Popover Avatar Height unit</caption>
                     <description></description>
                     <enumerationValues>
-                        <enumerationValue key="Auto">Auto</enumerationValue>
                         <enumerationValue key="Pixels">Pixels</enumerationValue>
                         <enumerationValue key="Percentage">Percentage</enumerationValue>
                     </enumerationValues>
@@ -89,7 +86,6 @@
                     <caption>Popover Avatar width unit</caption>
                     <description></description>
                     <enumerationValues>
-                        <enumerationValue key="Auto">Auto</enumerationValue>
                         <enumerationValue key="Pixels">Pixels</enumerationValue>
                         <enumerationValue key="Percentage">Percentage</enumerationValue>
                     </enumerationValues>
