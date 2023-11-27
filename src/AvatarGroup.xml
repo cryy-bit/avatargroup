@@ -10,7 +10,7 @@
     <properties>
         <propertyGroup caption="General">
             <propertyGroup caption="Data configuration">
-                <property key="datasource" type="datasource" required="false" isList="true">
+                <property key="datasource" type="datasource" required="true" isList="true">
                     <caption>Datasource</caption>
                     <description>Source of your avatar data</description>
                 </property>
@@ -32,14 +32,75 @@
                     <caption>Amount to show</caption>
                     <description></description>
                 </property>
+            </propertyGroup>
+
+            <propertyGroup caption="Visuals">
+                <property key="widthUnit" type="enumeration" defaultValue="Pixels">
+                    <caption>Avatar Width unit</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="Auto">Auto</enumerationValue>
+                        <enumerationValue key="Pixels">Pixels</enumerationValue>
+                        <enumerationValue key="Percentage">Percentage</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="avatarWidth" type="integer" required="true" defaultValue="25">
+                    <caption>Width</caption>
+                    <description></description>
+                </property>
+
+                <property key="heightUnit" type="enumeration" defaultValue="Pixels">
+                    <caption>Avatar Height unit</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="Auto">Auto</enumerationValue>
+                        <enumerationValue key="Pixels">Pixels</enumerationValue>
+                        <enumerationValue key="Percentage">Percentage</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="avatarHeight" type="integer" required="true" defaultValue="25" >
+                    <caption>Height</caption>
+                    <description></description>
+                </property>
 
                 <property key="showPopOver" type="boolean" required="true" defaultValue="true">
                     <caption>Show Popover</caption>
                     <description>This is used to enable/disable show more users in the pop-over</description>
                 </property>
+
+                <property key="popOverAvatarHeightUnit" type="enumeration" defaultValue="Pixels">
+                    <caption>Popover Avatar Height unit</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="Auto">Auto</enumerationValue>
+                        <enumerationValue key="Pixels">Pixels</enumerationValue>
+                        <enumerationValue key="Percentage">Percentage</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="popOverAvatarHeight" type="integer" required="true" defaultValue="25" >
+                    <caption>Height</caption>
+                    <description></description>
+                </property>
+
+                <property key="popOverAvatarWidthUnit" type="enumeration" defaultValue="Pixels">
+                    <caption>Popover Avatar width unit</caption>
+                    <description></description>
+                    <enumerationValues>
+                        <enumerationValue key="Auto">Auto</enumerationValue>
+                        <enumerationValue key="Pixels">Pixels</enumerationValue>
+                        <enumerationValue key="Percentage">Percentage</enumerationValue>
+                    </enumerationValues>
+                </property>
+
+                <property key="popOverAvatarWidth" type="integer" required="true" defaultValue="25" >
+                    <caption>Width</caption>
+                    <description></description>
+                </property>
+
             </propertyGroup>
-
-
         </propertyGroup>
     </properties>
 </widget>

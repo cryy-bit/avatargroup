@@ -1,4 +1,5 @@
 import { AvatarGroupPreviewProps } from "../typings/AvatarGroupProps";
+import { hidePropertyIn, hidePropertiesIn } from "@mendix/pluggable-widgets-tools";
 
 export type Platform = "web" | "desktop";
 
@@ -109,6 +110,30 @@ export function getProperties(
         delete defaultProperties.properties.myOtherProperty;
     }
     */
+    if (_values.heightUnit === "Auto") {
+        hidePropertyIn(defaultProperties, _values, "avatarHeight");
+    }
+
+    if (_values.widthUnit === "Auto") {
+        hidePropertyIn(defaultProperties, _values, "avatarWidth");
+    }
+
+    if (_values.popOverAvatarHeightUnit === "Auto") {
+        hidePropertyIn(defaultProperties, _values, "popOverAvatarHeight");
+    }
+
+    if (_values.popOverAvatarWidthUnit === "Auto") {
+        hidePropertyIn(defaultProperties, _values, "popOverAvatarWidth");
+    }
+
+    if (!_values.showPopOver) {
+        hidePropertiesIn(defaultProperties, _values, [
+            "popOverAvatarHeightUnit",
+            "popOverAvatarHeight",
+            "popOverAvatarWidth",
+            "popOverAvatarWidthUnit"
+        ]);
+    }
 
     return defaultProperties;
 }

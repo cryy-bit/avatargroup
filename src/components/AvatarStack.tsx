@@ -9,7 +9,21 @@ import { data } from "typings/AvatarDataProps";
 import PopOver from "./PopOver";
 
 const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
-    const { datasource, imgSrc, UserName, maxToShow, showPopOver } = props;
+    const {
+        datasource,
+        imgSrc,
+        UserName,
+        maxToShow,
+        showPopOver,
+        widthUnit,
+        heightUnit,
+        avatarHeight,
+        avatarWidth,
+        popOverAvatarHeight,
+        popOverAvatarHeightUnit,
+        popOverAvatarWidth,
+        popOverAvatarWidthUnit
+    } = props;
     const [isListVisible, setListVisible] = useState<boolean>(false);
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
     const [avatars, setAvatars] = useState<data[]>([]);
@@ -40,6 +54,11 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
         setAnchorEl(event.currentTarget);
     };
 
+    const customAvatarSize = {
+        height: heightUnit === "Auto" ? "Auto" : `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
+        width: widthUnit === "Auto" ? "Auto" : `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
+    };
+
     return (
         <Fragment>
             <AvatarGroup max={maxToShow + 1}>
@@ -47,15 +66,25 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
                     return (
                         <CustomWidthTooltip title={user.name} key={user.key} placement="top">
                             {user.src ? (
-                                <Avatar className="avatar" alt={`${user.name}`} src={`${user.src}`} />
+                                <Avatar
+                                    sx={customAvatarSize}
+                                    className="avatar"
+                                    alt={`${user.name}`}
+                                    src={`${user.src}`}
+                                />
                             ) : (
-                                <Avatar {...stringAvatar(user.name!)} alt={`${user.name}`} />
+                                <Avatar {...stringAvatar(user.name!, customAvatarSize)} alt={`${user.name}`} />
                             )}
                         </CustomWidthTooltip>
                     );
                 })}
                 {avatars && avatars?.length > maxToShow && (
-                    <Avatar id="avatar-last-elem" onClick={handleLastAvatarClicked} className="avatar">
+                    <Avatar
+                        sx={customAvatarSize}
+                        id="avatar-last-elem"
+                        onClick={handleLastAvatarClicked}
+                        className="avatar"
+                    >
                         +{avatars.length - maxToShow}
                     </Avatar>
                 )}
@@ -69,6 +98,10 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
                     data={avatars}
                     maxToShow={maxToShow}
                     stringAvatar={stringAvatar}
+                    avatarHeight={popOverAvatarHeight}
+                    avatarWidth={popOverAvatarWidth}
+                    heightUnit={popOverAvatarHeightUnit}
+                    widthUnit={popOverAvatarWidthUnit}
                 />
             )}
         </Fragment>
