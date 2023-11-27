@@ -38,7 +38,7 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
     });
 
     useEffect(() => {
-        if (datasource?.status === "available" && datasource.items) {
+        if (datasource.status === "available" && datasource.items) {
             const data: data[] = datasource.items.map(item => ({
                 key: item.id,
                 name: UserName?.get(item).displayValue,
@@ -47,7 +47,7 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
 
             setAvatars(data);
         }
-    }, [datasource?.status, UserName, datasource?.items, imgSrc]);
+    }, [datasource.status, UserName, datasource.items, imgSrc]);
 
     const handleLastAvatarClicked = (event: React.MouseEvent<HTMLDivElement>): void => {
         setListVisible(prev => !prev);
