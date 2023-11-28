@@ -13,6 +13,9 @@ The widget renders a Material-UI avatar stacked group, utilizing a Mendix dataso
 ## Issues, suggestions and feature requests
 [[link to GitHub issues]](https://github.com/cryy-bit/avatargroup/issues)
 
+## Known issues
+- Percentage sizing causes a lot of issues. For now it is better to use Pixel sizes to adjust your avatar size.
+
 ## Development and contribution
 1. Install NPM package dependencies by using: `npm install`. If you use NPM v7.x.x, which can be checked by executing `npm -v`, execute: `npm install --legacy-peer-deps`.
 2. Run `npm start` to watch for code changes. On every change:
