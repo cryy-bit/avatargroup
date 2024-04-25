@@ -11,18 +11,15 @@ import PopOver from "./PopOver";
 const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
     const {
         datasource,
+        imgType,
         imgSrc,
         UserName,
         maxToShow,
         showPopOver,
-        widthUnit,
-        heightUnit,
         avatarHeight,
         avatarWidth,
         popOverAvatarHeight,
-        popOverAvatarHeightUnit,
-        popOverAvatarWidth,
-        popOverAvatarWidthUnit
+        popOverAvatarWidth
     } = props;
     const [isListVisible, setListVisible] = useState<boolean>(false);
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
@@ -42,7 +39,7 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
             const data: data[] = datasource.items.map(item => ({
                 key: item.id,
                 name: UserName?.get(item).displayValue,
-                src: imgSrc ? imgSrc.get(item).value : undefined
+                src: imgType === "img" && imgSrc ? imgSrc.get(item).value : undefined
             }));
 
             setAvatars(data);
@@ -55,8 +52,8 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
     };
 
     const customAvatarSize = {
-        height: `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
-        width: `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
+        height: `${avatarHeight}px`,
+        width: `${avatarWidth}px`
     };
 
     return (
@@ -83,7 +80,7 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
                         sx={customAvatarSize}
                         id="avatar-last-elem"
                         onClick={handleLastAvatarClicked}
-                        className="avatar"
+                        className={`avatar ${showPopOver ? "avatar-showmore" : ""}`}
                     >
                         +{avatars.length - maxToShow}
                     </Avatar>
@@ -100,8 +97,6 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
                     stringAvatar={stringAvatar}
                     avatarHeight={popOverAvatarHeight}
                     avatarWidth={popOverAvatarWidth}
-                    heightUnit={popOverAvatarHeightUnit}
-                    widthUnit={popOverAvatarWidthUnit}
                 />
             )}
         </Fragment>

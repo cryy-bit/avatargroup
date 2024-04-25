@@ -6,6 +6,10 @@ Place your custom CSS here
    opacity: 0.7;
 }
 
+.avatar-showmore{
+    cursor: pointer;
+}
+
 .flex-container{
     display: flex;
     align-items: center;

@@ -6,13 +6,7 @@
 import { CSSProperties } from "react";
 import { ListValue, ListAttributeValue, ListExpressionValue } from "mendix";
 
-export type WidthUnitEnum = "Pixels" | "Percentage";
-
-export type HeightUnitEnum = "Pixels" | "Percentage";
-
-export type PopOverAvatarHeightUnitEnum = "Pixels" | "Percentage";
-
-export type PopOverAvatarWidthUnitEnum = "Pixels" | "Percentage";
+export type ImgTypeEnum = "img" | "initials";
 
 export interface AvatarGroupContainerProps {
     name: string;
@@ -21,16 +15,13 @@ export interface AvatarGroupContainerProps {
     tabIndex?: number;
     datasource: ListValue;
     UserName: ListAttributeValue<string>;
-    imgSrc?: ListExpressionValue<string>;
+    imgType: ImgTypeEnum;
+    imgSrc: ListExpressionValue<string>;
     maxToShow: number;
-    widthUnit: WidthUnitEnum;
     avatarWidth: number;
-    heightUnit: HeightUnitEnum;
     avatarHeight: number;
     showPopOver: boolean;
-    popOverAvatarHeightUnit: PopOverAvatarHeightUnitEnum;
     popOverAvatarHeight: number;
-    popOverAvatarWidthUnit: PopOverAvatarWidthUnitEnum;
     popOverAvatarWidth: number;
 }
 
@@ -45,15 +36,12 @@ export interface AvatarGroupPreviewProps {
     readOnly: boolean;
     datasource: {} | { caption: string } | { type: string } | null;
     UserName: string;
+    imgType: ImgTypeEnum;
     imgSrc: string;
     maxToShow: number | null;
-    widthUnit: WidthUnitEnum;
     avatarWidth: number | null;
-    heightUnit: HeightUnitEnum;
     avatarHeight: number | null;
     showPopOver: boolean;
-    popOverAvatarHeightUnit: PopOverAvatarHeightUnitEnum;
     popOverAvatarHeight: number | null;
-    popOverAvatarWidthUnit: PopOverAvatarWidthUnitEnum;
     popOverAvatarWidth: number | null;
 }

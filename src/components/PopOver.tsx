@@ -11,8 +11,6 @@ interface PopOverProps {
     data: data[];
     maxToShow: number;
     stringAvatar: (name: string, object?: { width: string; height: string }) => object;
-    heightUnit: string;
-    widthUnit: string;
     avatarHeight: number;
     avatarWidth: number;
 }
@@ -24,14 +22,12 @@ const PopOver = ({
     data,
     maxToShow,
     stringAvatar,
-    heightUnit,
-    widthUnit,
     avatarHeight,
     avatarWidth
 }: PopOverProps): ReactElement => {
     const customAvatarSize = {
-        height: `${avatarHeight}${heightUnit === "Pixels" ? "px" : "%"}`,
-        width: `${avatarWidth}${widthUnit === "Pixels" ? "px" : "%"}`
+        height: `${avatarHeight}px`,
+        width: `${avatarWidth}px`
     };
 
     return (

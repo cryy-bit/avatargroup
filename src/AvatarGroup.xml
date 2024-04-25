@@ -22,10 +22,19 @@
                         <attributeType name="String" />
                     </attributeTypes>
                 </property>
+                
+                <property key="imgType" type="enumeration" defaultValue="img">
+                    <caption>Avatar Type</caption>
+                    <description>Select the type of source for your avatar</description>
+                    <enumerationValues>
+                        <enumerationValue key="img">Image URL source</enumerationValue>
+                        <enumerationValue key="initials">Display user's initials</enumerationValue>
+                    </enumerationValues>
+                </property>
 
-                <property key="imgSrc" type="textTemplate" required="false" dataSource="datasource">
+                <property key="imgSrc" type="textTemplate" required="true" dataSource="datasource">
                     <caption>Image URL</caption>
-                    <description>External image URL. Leave this empty if you want to display user's initials</description>
+                    <description></description>
                 </property>
 
                 <property key="maxToShow" type="integer" defaultValue="3" required="true">
@@ -33,32 +42,16 @@
                     <description></description>
                 </property>
             </propertyGroup>
-
+        </propertyGroup>
+        <propertyGroup caption="Customization">
             <propertyGroup caption="Visuals">
-                <property key="widthUnit" type="enumeration" defaultValue="Pixels">
-                    <caption>Avatar Width unit</caption>
-                    <description></description>
-                    <enumerationValues>
-                        <enumerationValue key="Pixels">Pixels</enumerationValue>
-                        <enumerationValue key="Percentage">Percentage</enumerationValue>
-                    </enumerationValues>
-                </property>
 
                 <property key="avatarWidth" type="integer" required="true" defaultValue="25">
                     <caption>Width</caption>
                     <description></description>
                 </property>
 
-                <property key="heightUnit" type="enumeration" defaultValue="Pixels">
-                    <caption>Avatar Height unit</caption>
-                    <description></description>
-                    <enumerationValues>
-                        <enumerationValue key="Pixels">Pixels</enumerationValue>
-                        <enumerationValue key="Percentage">Percentage</enumerationValue>
-                    </enumerationValues>
-                </property>
-
-                <property key="avatarHeight" type="integer" required="true" defaultValue="25" >
+                <property key="avatarHeight" type="integer" required="true" defaultValue="25">
                     <caption>Height</caption>
                     <description></description>
                 </property>
@@ -68,30 +61,12 @@
                     <description>This is used to enable/disable show more users in the pop-over</description>
                 </property>
 
-                <property key="popOverAvatarHeightUnit" type="enumeration" defaultValue="Pixels">
-                    <caption>Popover Avatar Height unit</caption>
-                    <description></description>
-                    <enumerationValues>
-                        <enumerationValue key="Pixels">Pixels</enumerationValue>
-                        <enumerationValue key="Percentage">Percentage</enumerationValue>
-                    </enumerationValues>
-                </property>
-
-                <property key="popOverAvatarHeight" type="integer" required="true" defaultValue="25" >
+                <property key="popOverAvatarHeight" type="integer" required="true" defaultValue="25">
                     <caption>Height</caption>
                     <description></description>
                 </property>
 
-                <property key="popOverAvatarWidthUnit" type="enumeration" defaultValue="Pixels">
-                    <caption>Popover Avatar width unit</caption>
-                    <description></description>
-                    <enumerationValues>
-                        <enumerationValue key="Pixels">Pixels</enumerationValue>
-                        <enumerationValue key="Percentage">Percentage</enumerationValue>
-                    </enumerationValues>
-                </property>
-
-                <property key="popOverAvatarWidth" type="integer" required="true" defaultValue="25" >
+                <property key="popOverAvatarWidth" type="integer" required="true" defaultValue="25">
                     <caption>Width</caption>
                     <description></description>
                 </property>
