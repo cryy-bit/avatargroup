@@ -3,8 +3,8 @@
  * WARNING: All changes made to this file will be overwritten
  * @author Mendix Widgets Framework Team
  */
+import { ListAttributeValue, ListExpressionValue, ListValue } from "mendix";
 import { CSSProperties } from "react";
-import { ListValue, ListAttributeValue, ListExpressionValue } from "mendix";
 
 export type ImgTypeEnum = "img" | "initials";
 
@@ -34,6 +34,8 @@ export interface AvatarGroupPreviewProps {
     style: string;
     styleObject?: CSSProperties;
     readOnly: boolean;
+    renderMode: "design" | "xray" | "structure";
+    translate: (text: string) => string;
     datasource: {} | { caption: string } | { type: string } | null;
     UserName: string;
     imgType: ImgTypeEnum;

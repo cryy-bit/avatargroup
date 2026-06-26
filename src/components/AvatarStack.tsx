@@ -1,4 +1,4 @@
-import React, { createElement, useState, useEffect, Fragment, ReactElement } from "react";
+import React, {  useState, useEffect, Fragment, ReactElement } from "react";
 import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";

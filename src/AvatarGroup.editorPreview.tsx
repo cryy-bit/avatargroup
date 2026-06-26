@@ -1,4 +1,4 @@
-import { ReactElement, createElement } from "react";
+import { ReactElement } from "react";
 import AvatarStackPreview from "./components/AvatarStackPreview";
 
 export function preview(): ReactElement {

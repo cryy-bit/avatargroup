@@ -1,4 +1,4 @@
-import { ReactElement, createElement } from "react";
+import { ReactElement } from "react";
 import { AvatarGroupContainerProps } from "../typings/AvatarGroupProps";
 
 import "./ui/AvatarGroup.css";
