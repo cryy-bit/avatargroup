@@ -112,13 +112,10 @@ export function getProperties(
     */
 
     if (!_values.showPopOver) {
-        hidePropertiesIn(defaultProperties, _values, [
-            "popOverAvatarHeight",
-            "popOverAvatarWidth"
-        ]);
+        hidePropertiesIn(defaultProperties, _values, ["popOverAvatarHeight", "popOverAvatarWidth"]);
     }
 
-    if (_values.imgType === "initials"){
+    if (_values.imgType === "initials") {
         hidePropertiesIn(defaultProperties, _values, ["imgSrc"]);
     }
 

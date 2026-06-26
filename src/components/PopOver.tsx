@@ -1,4 +1,4 @@
-import {  ReactElement } from "react";
+import { ReactElement } from "react";
 import Avatar from "@mui/material/Avatar";
 import Popover from "@mui/material/Popover";
 import Typography from "@mui/material/Typography";

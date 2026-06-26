@@ -6,5 +6,6 @@ export function preview(): ReactElement {
 }
 
 export function getPreviewCss(): string {
+    // eslint-disable-next-line @typescript-eslint/no-var-requires
     return require("./ui/AvatarGroup.css");
 }

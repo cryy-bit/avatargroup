@@ -1,4 +1,4 @@
-import React, {  useState, useEffect, Fragment, ReactElement } from "react";
+import React, { useState, Fragment, ReactElement } from "react";
 import { AvatarGroupContainerProps } from "typings/AvatarGroupProps";
 import Avatar from "@mui/material/Avatar";
 import AvatarGroup from "@mui/material/AvatarGroup";
@@ -25,6 +25,8 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
     const [anchorEl, setAnchorEl] = useState<HTMLDivElement | null>(null);
     const [avatars, setAvatars] = useState<data[]>([]);
 
+    const [prevItems, setPrevItems] = useState(datasource.items);
+
     const CustomWidthTooltip = styled(({ className, ...props }: TooltipProps) => (
         <Tooltip {...props} classes={{ popper: className }} />
     ))({
@@ -34,17 +36,20 @@ const AvatarStack = (props: AvatarGroupContainerProps): ReactElement => {
         }
     });
 
-    useEffect(() => {
-        if (datasource.status === "available" && datasource.items) {
-            const data: data[] = datasource.items.map(item => ({
-                key: item.id,
-                name: UserName?.get(item).displayValue,
-                src: imgType === "img" && imgSrc ? imgSrc.get(item).value : undefined
-            }));
+    if (datasource.items !== prevItems) {
+        setPrevItems(datasource.items);
 
+        if (datasource.status === "available") {
+            const data: data[] = datasource.items
+                ? datasource.items.map(item => ({
+                      key: item.id,
+                      name: UserName?.get(item).displayValue,
+                      src: imgType === "img" && imgSrc ? imgSrc.get(item).value : undefined
+                  }))
+                : [];
             setAvatars(data);
         }
-    }, [datasource.status, UserName, datasource.items, imgSrc]);
+    }
 
     const handleLastAvatarClicked = (event: React.MouseEvent<HTMLDivElement>): void => {
         setListVisible(prev => !prev);
